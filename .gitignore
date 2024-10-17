@@ -396,3 +396,15 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Content
+/Intermediate/Build/Win64/DonkeyKong_L02/DebugGame
+/Intermediate/Build/Win64/DonkeyKong_L02Editor/DebugGame/Engine
+/Intermediate/Build/Win64/DonkeyKong_L02Editor/DebugGame
+/Intermediate/Build/Win64/DonkeyKong_L02Editor/Development/Engine
+/Intermediate/Build/Win64/DonkeyKong_L02Editor/Development
+/Intermediate/Build/Win64/DonkeyKong_TestEditor/DebugGame
+/Intermediate/Build/Win64/DonkeyKong_TestEditor/Development
+/Intermediate/Build/Win64/UE4
+/Intermediate/Build/Win64/UE4Editor
+/Saved
+/Binaries/Win64
