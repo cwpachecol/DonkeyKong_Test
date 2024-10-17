@@ -14,13 +14,13 @@ AEnemigo::AEnemigo()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshContainer(TEXT("SkeletalMesh'/Game/AfricanAnimalsPack/Elephant/Meshes/SK_Elephant.SK_Elephant'"));
-	if (MeshContainer.Succeeded())
-	{
-		/*USkeletalMeshComponent* PlayerMesh = GetMesh();
-		PlayerMesh->SetSkeletalMesh(MeshContainer.Object);*/
-		GetMesh()->SetSkeletalMesh(MeshContainer.Object);
-	}
+	//static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshContainer(TEXT("SkeletalMesh'/Game/AfricanAnimalsPack/Elephant/Meshes/SK_Elephant.SK_Elephant'"));
+	//if (MeshContainer.Succeeded())
+	//{
+	//	/*USkeletalMeshComponent* PlayerMesh = GetMesh();
+	//	PlayerMesh->SetSkeletalMesh(MeshContainer.Object);*/
+	//	GetMesh()->SetSkeletalMesh(MeshContainer.Object);
+	//}
 
 	//static ConstructorHelpers::FObjectFinder<UAnimSequence> Anim(TEXT("AnimSequence'/Game/AfricanAnimalsPack/Crocodile/Animations/ANIM_Crocodile_Idle.ANIM_Crocodile_Idle'"));
 	//if (Anim.Succeeded())

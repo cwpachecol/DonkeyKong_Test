@@ -20,6 +20,12 @@
 #include "Inventario.h"
 #include "FabricaPosionesBenignas.h"
 #include "Posion.h"
+#include "FabricaEnemigos.h"
+#include "FabricaEnemigosFantasia.h"
+#include "FabricaEnemigosAnimales.h"
+#include "FabricaEnemigosMisticos.h"
+
+#include "Enemigo.h"
 
 ADonkeyKong_TestGameMode::ADonkeyKong_TestGameMode()
 {
@@ -172,6 +178,32 @@ void ADonkeyKong_TestGameMode::BeginPlay()
 	posion->SetActorLocation(FVector(1160.0f, 0.0f, 200.f));
 	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Potion is %s"), *posion->getNombrePosion()));
 	
+
+	AFabricaEnemigos* fabricaEnemigos;
+	//fabricaEnemigos = NewObject<AFabricaEnemigosFantasia>();
+	fabricaEnemigos = NewObject<AFabricaEnemigosAnimales>();
+	//fabricaEnemigos = NewObject<AFabricaEnemigosMisticos>();
+
+	AEnemigo* enemigoTerrestre01 = fabricaEnemigos->FabricarEnemigoTerrestre();
+
+	FTransform SpawnLocationEnemigo;
+	SpawnLocationEnemigo.SetLocation(FVector(1860.0f, 0.0f + float(FMath::RandRange(-500, 500)), 360.0f));
+	SpawnLocationEnemigo.SetRotation(FQuat(FRotator(0.0f, 0.0f, 0.0f)));
+
+	AEnemigo* enemigoSpawned = GetWorld()->SpawnActor<AEnemigo>(enemigoTerrestre01->GetClass(), SpawnLocationEnemigo);
+
+	fabricaEnemigos = NewObject<AFabricaEnemigosFantasia>();
+	AEnemigo* enemigoTerrestre02 = fabricaEnemigos->FabricarEnemigoTerrestre();
+
+	SpawnLocationEnemigo.SetLocation(FVector(1860.0f, 0.0f + float(FMath::RandRange(-500, 500)), 360.0f));
+	GetWorld()->SpawnActor<AEnemigo>(enemigoTerrestre02->GetClass(), SpawnLocationEnemigo);
+
+	fabricaEnemigos = NewObject<AFabricaEnemigosMisticos>();
+	AEnemigo* enemigoTerrestre03 = fabricaEnemigos->FabricarEnemigoTerrestre();
+
+	SpawnLocationEnemigo.SetLocation(FVector(1860.0f, 0.0f + float(FMath::RandRange(-500, 500)), 360.0f));
+	GetWorld()->SpawnActor<AEnemigo>(enemigoTerrestre03->GetClass(), SpawnLocationEnemigo);
+
 
 }
 

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\DonkeyKong_Test.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{89F35003-9DA8-444A-9DA6-BEEC7C746A94}</UniqueIdentifier>
+      <UniqueIdentifier>{01746694-2D22-45EB-9E0A-0F7640E8878A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\DonkeyKong_Test.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{8E3C21D7-D6DF-4873-B8EC-A32CB60CADFD}</UniqueIdentifier>
+      <UniqueIdentifier>{35B841A6-21C3-4A8F-AB19-A566ADCB90DC}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\DonkeyKong_Test">
-      <UniqueIdentifier>{15640154-DB48-4CAA-9094-07960E6E3504}</UniqueIdentifier>
+      <UniqueIdentifier>{CE2ADE4D-BC14-45E5-BDEE-CF47B5E03874}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\DonkeyKong_Test\Barril.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
@@ -91,64 +91,58 @@
     <ClInclude Include="..\..\Source\DonkeyKong_Test\Enemigo.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaBeholder.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalCocodrilo.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaBeholder.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalCocodrilo.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaCactus.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalCuervo.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaCactus.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalCuervo.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaChestMonster.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalElefante.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaChestMonster.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalElefante.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaMushroom.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalHipopotamo.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaMushroom.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalHipopotamo.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaSlime.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalLeon.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaSlime.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalLeon.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaSwarm.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalLobo.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaSwarm.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalLobo.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaSwarmB.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalRinoceronte.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaSwarmB.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalRinoceronte.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaTurtleShell.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalZebra.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoCaricaturaTurtleShell.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalZebra.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoCocodrilo.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalZorro.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoCocodrilo.h">
-      <Filter>Source\DonkeyKong_Test</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoCuervo.cpp">
-      <Filter>Source\DonkeyKong_Test</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoCuervo.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoAnimalZorro.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoDragonNightmare.cpp">
@@ -163,64 +157,100 @@
     <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoDragonSoulEater.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoDragonTerrorBringer.cpp">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoDragonTerrorBringer.h">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoDragonUsurper.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoDragonUsurper.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoElefante.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaBeholder.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoElefante.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaBeholder.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoHipopotamo.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaCactus.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoHipopotamo.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaCactus.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoLeon.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaChestMonster.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoLeon.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaChestMonster.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoLobo.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaMushroom.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoLobo.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaMushroom.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoRinoceronte.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaSlime.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoRinoceronte.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaSlime.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoTerrorBringer.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaSwarm.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoTerrorBringer.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaSwarm.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoZebra.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaSwarmB.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoZebra.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaSwarmB.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoZorro.cpp">
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaTurtleShell.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoZorro.h">
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EnemigoFantasiaTurtleShell.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_Test\Esfera.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\DonkeyKong_Test\Esfera.h">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\FabricaEnemigos.cpp">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\FabricaEnemigos.h">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\FabricaEnemigosAnimales.cpp">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\FabricaEnemigosAnimales.h">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\FabricaEnemigosFantasia.cpp">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\FabricaEnemigosFantasia.h">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\FabricaEnemigosMisticos.cpp">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\FabricaEnemigosMisticos.h">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\FabricaEnemigosMitologicos.cpp">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\FabricaEnemigosMitologicos.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_Test\FabricaPosiones.cpp">
