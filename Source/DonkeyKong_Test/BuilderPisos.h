@@ -26,11 +26,11 @@ class DONKEYKONG_TEST_API IBuilderPisos
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
-	virtual AComponentePiso* BuildComponentePiso() = 0;
-	virtual AComponentePiso* BuildComponenteFijoPiso() = 0;
-	virtual AComponentePiso* BuildComponenteMovilPiso() = 0;
+	//virtual AComponentePiso* BuildComponentePiso() = 0;
+	//virtual AComponentePiso* BuildComponenteFijoPiso() = 0;
+	//virtual AComponentePiso* BuildComponenteMovilPiso() = 0;
 	virtual void BuildComponentesPiso() = 0;
-	virtual AObstaculo* BuildObstaculo() = 0;
-	virtual AEscalera* BuildEscalera() = 0;
+	virtual void BuildObstaculos() = 0;
+	virtual void BuildEscaleras() = 0;
 	virtual class APiso* GetPiso() = 0;
 };

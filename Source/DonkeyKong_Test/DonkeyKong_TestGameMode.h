@@ -14,6 +14,7 @@ class AEsfera;
 class AMuro;
 class AInventario;
 class ABuilderPisosBasicos;
+class ABuilderPisosIntermedios;
 class ADirectorPisos;
 
 UCLASS(minimalapi)
@@ -41,6 +42,10 @@ private:
 	//The Builder Actor
 	UPROPERTY(VisibleAnywhere, Category = "Pisos")
 	ABuilderPisosBasicos* PisosBasicosBuilder;
+
+	UPROPERTY(VisibleAnywhere, Category = "Pisos")
+	ABuilderPisosIntermedios* PisosIntermediosBuilder;
+
 	//The Engineer Actor
 	UPROPERTY(VisibleAnywhere, Category = "Pisos")
 	ADirectorPisos* DirectorPisos;

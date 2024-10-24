@@ -25,6 +25,9 @@ protected:
 	virtual void BeginPlay() override;
 public:
 	TArray<AComponentePiso*> aComponentesPiso;
+	TArray<AObstaculo*> aObstaculosPiso;
+	TArray<AEscalera*> aEscalerasPiso;
+
 	int16 NumeroComponentesPiso;
 	FVector PosicionInicialPiso;
 	FVector DimensionesComponentePiso;
@@ -33,10 +36,8 @@ public:
 	int16 NumeroComponentesPisoFijos;
 	float distanciaEntreComponentesPiso;
 
-	TArray<AObstaculo*> aObstaculosPiso;
 	int16 NumeroObstaculos;
 
-	TArray<AEscalera*> aEscalerasPiso;
 	int16 NumeroEscaleras;
 
 

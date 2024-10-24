@@ -27,6 +27,7 @@
 
 #include "Enemigo.h"
 #include "BuilderPisosBasicos.h"
+#include "BuilderPisosIntermedios.h"
 #include "DirectorPisos.h"
 #include "Piso.h"
 
@@ -121,14 +122,18 @@ void ADonkeyKong_TestGameMode::BeginPlay()
 	// FIN CREAR PLATAFORMA ANTERIOR
 	//INICIO CREAR PLATAFORMA NUEVA CON PATRON BUILDER
 	//Spawn PisosBasicosBuilder and DirectorPisos
-	PisosBasicosBuilder = GetWorld()->SpawnActor<ABuilderPisosBasicos>(ABuilderPisosBasicos::StaticClass());
 	DirectorPisos = GetWorld()->SpawnActor<ADirectorPisos>(ADirectorPisos::StaticClass());
+
+	PisosBasicosBuilder = GetWorld()->SpawnActor<ABuilderPisosBasicos>(ABuilderPisosBasicos::StaticClass());
+	PisosIntermediosBuilder = GetWorld()->SpawnActor<ABuilderPisosIntermedios>(ABuilderPisosIntermedios::StaticClass());
 	//Set the Builder for the Engineer and create the buildings
 	DirectorPisos->SetBuilderPisos(PisosBasicosBuilder);
 	DirectorPisos->ConstruirPiso();
+	DirectorPisos->SetBuilderPisos(PisosIntermediosBuilder);
+	DirectorPisos->ConstruirPiso();
+
 	//Get the Engineer's Lodging and Logs the created buildings
-	APiso* Piso = DirectorPisos->GetPiso();
-	//Piso->LodgingCharacteristics();
+	//APiso* Piso = DirectorPisos->GetPiso();
 
 	//FIN CREAR PLATAFORMA CON PATRON BUILDER
 

@@ -20,7 +20,7 @@ void ABuilderPisosBasicos::BeginPlay()
 {
 	Super::BeginPlay();
 
-	PosicionSpawnComponentePiso = FVector(1160.0f, -1300.0f, 800.f);
+	PosicionSpawnComponentePiso = FVector(1160.0f, -1300.0f, 600.f);
 	RotacionSpawnComponentePiso = FRotator(0.0f, 0.0f, 10.0f);
 	DistanciaEntreComponentesPiso = FVector(10.0f, 100.0f, 10.0f);
 	DimensionesComponentePiso = FVector(100.0f, 200.0f, 50.0f);
@@ -85,14 +85,14 @@ void ABuilderPisosBasicos::BuildComponentesPiso()
 	
 }
 
-AObstaculo* ABuilderPisosBasicos::BuildObstaculo()
+void ABuilderPisosBasicos::BuildObstaculos()
 {
-	return nullptr;
+	
 }
 
-AEscalera* ABuilderPisosBasicos::BuildEscalera()
+void ABuilderPisosBasicos::BuildEscaleras()
 {
-	return nullptr;
+	
 }
 
 APiso* ABuilderPisosBasicos::GetPiso()

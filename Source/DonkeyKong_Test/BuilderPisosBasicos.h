@@ -43,12 +43,12 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	virtual AComponentePiso* BuildComponentePiso() override;
-	virtual AComponentePiso* BuildComponenteFijoPiso() override;
-	virtual AComponentePiso* BuildComponenteMovilPiso() override;
+	AComponentePiso* BuildComponentePiso();
+	AComponentePiso* BuildComponenteFijoPiso();
+	AComponentePiso* BuildComponenteMovilPiso();
 	virtual void BuildComponentesPiso() override;
-	virtual AObstaculo* BuildObstaculo() override;
-	virtual AEscalera* BuildEscalera() override;
+	virtual void BuildObstaculos() override;
+	virtual void BuildEscaleras() override;
 
 	virtual APiso* GetPiso() override;
 
