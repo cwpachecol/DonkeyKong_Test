@@ -13,6 +13,8 @@ class ABarril;
 class AEsfera;
 class AMuro;
 class AInventario;
+class ABuilderPisosBasicos;
+class ADirectorPisos;
 
 UCLASS(minimalapi)
 class ADonkeyKong_TestGameMode : public AGameModeBase
@@ -36,6 +38,16 @@ protected:
 	TArray<AMuro*> aMuros;
 
 private:
+	//The Builder Actor
+	UPROPERTY(VisibleAnywhere, Category = "Pisos")
+	ABuilderPisosBasicos* PisosBasicosBuilder;
+	//The Engineer Actor
+	UPROPERTY(VisibleAnywhere, Category = "Pisos")
+	ADirectorPisos* DirectorPisos;
+
+
+
+
 	FTimerHandle SpawnBarrilTimerHandle;
 	void SpawnBarril();
 

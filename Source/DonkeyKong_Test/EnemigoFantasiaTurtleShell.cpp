@@ -12,12 +12,12 @@ AEnemigoFantasiaTurtleShell::AEnemigoFantasiaTurtleShell()
 {
 	//PrimaryActorTick.bCanEverTick = true;
 
-	////static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshContainer(TEXT("Skeleton'/Game/MonsterForSurvivalGame/Mesh/PBR/TurtleShell_Skeleton.TurtleShell_Skeleton'"));
-	//static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshContainer(TEXT("SkeletalMesh'/Game/AfricanAnimalsPack/Crocodile/Meshes/SK_Crocodile.SK_Crocodile'"));
-	//if (MeshContainer.Succeeded())
-	//{
-	//	GetMesh()->SetSkeletalMesh(MeshContainer.Object);
-	//}
+	//static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshContainer(TEXT("Skeleton'/Game/MonsterForSurvivalGame/Mesh/PBR/TurtleShell_Skeleton.TurtleShell_Skeleton'"));
+	static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshContainer(TEXT("SkeletalMesh'/Game/MonsterForSurvivalGame/Mesh/PBR/TurtleShell_SK.TurtleShell_SK'"));
+	if (MeshContainer.Succeeded())
+	{
+		GetMesh()->SetSkeletalMesh(MeshContainer.Object);
+	}
 }
 
 void AEnemigoFantasiaTurtleShell::Tick(float DeltaTime)

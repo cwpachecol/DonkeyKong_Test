@@ -26,6 +26,10 @@
 #include "FabricaEnemigosMisticos.h"
 
 #include "Enemigo.h"
+#include "BuilderPisosBasicos.h"
+#include "DirectorPisos.h"
+#include "Piso.h"
+
 
 ADonkeyKong_TestGameMode::ADonkeyKong_TestGameMode()
 {
@@ -43,77 +47,92 @@ void ADonkeyKong_TestGameMode::BeginPlay()
     Super::BeginPlay();
 
 	
-	ACharacter* MyCharacter = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
-	if (MyCharacter)
-	{
-		// Establecer la nueva posición
-		FVector NewLocation = FVector(1160.0f, 1300.0f, 5500.0f);
-		MyCharacter->SetActorLocation(NewLocation);
-	}
+	//ACharacter* MyCharacter = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
+	//if (MyCharacter)
+	//{
+	//	// Establecer la nueva posición
+	//	FVector NewLocation = FVector(1160.0f, 1300.0f, 5500.0f);
+	//	MyCharacter->SetActorLocation(NewLocation);
+	//}
 
-	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Yellow, TEXT("Creando plataforma"));
+	// INICIO CREAR PLATAFORMA 
+	//GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Yellow, TEXT("Creando plataforma"));
 	// Spawn an instance of the AMyFirstActor class at the
 	//default location.
-	FTransform SpawnLocation;
-	SpawnLocation.SetLocation(FVector(1160.0f, -210.0f, 140.0f));
-	SpawnLocation.SetRotation(FQuat(FRotator(0.0f, 0.0f, 0.0f)));
-	obstaculo01 = GetWorld()->SpawnActor<AObstaculoMuro>(AObstaculoMuro::StaticClass(), SpawnLocation);
-	/*if (player01 != nullptr)
-	{
-		player01->SetObstaculo(obstaculo01);
-	}*/
+	//FTransform SpawnLocation;
+	//SpawnLocation.SetLocation(FVector(1160.0f, -210.0f, 140.0f));
+	//SpawnLocation.SetRotation(FQuat(FRotator(0.0f, 0.0f, 0.0f)));
+	//obstaculo01 = GetWorld()->SpawnActor<AObstaculoMuro>(AObstaculoMuro::StaticClass(), SpawnLocation);
+	///*if (player01 != nullptr)
+	//{
+	//	player01->SetObstaculo(obstaculo01);
+	//}*/
 
-	for (int32 i = 0; i < 5; ++i) {
-		aComponentesPlataformaMoviles.Add(FMath::RandRange(2, 7)); // Genera un número entre 2 y 7
-	}
+	//for (int32 i = 0; i < 5; ++i) {
+	//	aComponentesPlataformaMoviles.Add(FMath::RandRange(2, 7)); // Genera un número entre 2 y 7
+	//}
 
-	FVector posicionInicial = FVector(1160.0f, -1300.0f, 800.f);
-	FRotator rotacionInicial = FRotator(0.0f, 0.0f, 10.0f);
-	FTransform SpawnLocationCP;
-	float anchoComponentePlataforma = 300.0f;
+	//FVector posicionInicial = FVector(1160.0f, -1300.0f, 800.f);
+	//FRotator rotacionInicial = FRotator(0.0f, 0.0f, 10.0f);
+	//FTransform SpawnLocationCP;
+	//float anchoComponentePlataforma = 300.0f;
 
-	float incrementoAltoComponentePlataforma = 55.0f;
-	float incrementoAltoEntrePisos = 500.0f;
-	float incrementoInicioPiso = 100.0f;
-	float incrementoAnchoComponentePlataforma = -300.0f;
-	
-	int numeroPisoComponentePlataformaMovil = 0;
-	int numeroComponentePlataformaMovil = 4;
-	
-	
+	//float incrementoAltoComponentePlataforma = 55.0f;
+	//float incrementoAltoEntrePisos = 500.0f;
+	//float incrementoInicioPiso = 100.0f;
+	//float incrementoAnchoComponentePlataforma = -300.0f;
+	//
+	//int numeroPisoComponentePlataformaMovil = 0;
+	//int numeroComponentePlataformaMovil = 4;
+	//
+	//
 	//npp -> Número de pisos por plataforma
-	for (int npp = 0; npp < 5; npp++) {
-		rotacionInicial.Roll = rotacionInicial.Roll * -1;
-		incrementoInicioPiso = incrementoInicioPiso * -1;
-		incrementoAnchoComponentePlataforma = incrementoAnchoComponentePlataforma * -1;	
-		SpawnLocationCP.SetRotation(FQuat(rotacionInicial));
-		SpawnLocationCP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z));
-		
-		for (int ncp = 0; ncp < 10; ncp++) {
-			
-			if (ncp != (aComponentesPlataformaMoviles[npp] - 1) && ncp != (aComponentesPlataformaMoviles[npp] + 1)) {
-				AcomponentePlataforma* cp = GetWorld()->SpawnActor<AcomponentePlataforma>(AcomponentePlataforma::StaticClass(), SpawnLocationCP);
-				if (ncp == aComponentesPlataformaMoviles[npp]) {
-					if (FMath::RandRange(0, 1))
-						cp->setbMoverHorizontalmente(true);
-					else
-						cp->setbMoverVerticalmente(true);
-				}
-			}
-			posicionInicial.Z = posicionInicial.Z + incrementoAltoComponentePlataforma;
-			if (ncp < 9) {
-				posicionInicial.Y = posicionInicial.Y + incrementoAnchoComponentePlataforma;
-			}
-			
-			SpawnLocationCP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z));
+	//for (int npp = 0; npp < 5; npp++) {
+	//	rotacionInicial.Roll = rotacionInicial.Roll * -1;
+	//	incrementoInicioPiso = incrementoInicioPiso * -1;
+	//	incrementoAnchoComponentePlataforma = incrementoAnchoComponentePlataforma * -1;	
+	//	SpawnLocationCP.SetRotation(FQuat(rotacionInicial));
+	//	SpawnLocationCP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z));
+	//	
+	//	for (int ncp = 0; ncp < 10; ncp++) {
+	//		
+	//		if (ncp != (aComponentesPlataformaMoviles[npp] - 1) && ncp != (aComponentesPlataformaMoviles[npp] + 1)) {
+	//			AcomponentePlataforma* cp = GetWorld()->SpawnActor<AcomponentePlataforma>(AcomponentePlataforma::StaticClass(), SpawnLocationCP);
+	//			if (ncp == aComponentesPlataformaMoviles[npp]) {
+	//				if (FMath::RandRange(0, 1))
+	//					cp->setbMoverHorizontalmente(true);
+	//				else
+	//					cp->setbMoverVerticalmente(true);
+	//			}
+	//		}
+	//		posicionInicial.Z = posicionInicial.Z + incrementoAltoComponentePlataforma;
+	//		if (ncp < 9) {
+	//			posicionInicial.Y = posicionInicial.Y + incrementoAnchoComponentePlataforma;
+	//		}
+	//		
+	//		SpawnLocationCP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z));
 
-		}
-		
-		posicionInicial.Z = posicionInicial.Z + incrementoAltoEntrePisos;
-		posicionInicial.Y = posicionInicial.Y + incrementoInicioPiso;
-	}
+	//	}
+	//	
+	//	posicionInicial.Z = posicionInicial.Z + incrementoAltoEntrePisos;
+	//	posicionInicial.Y = posicionInicial.Y + incrementoInicioPiso;
+	//}
 
-	FVector posicionDisparador = FVector(1160.0f, 0.0f, 1500.f);
+	// FIN CREAR PLATAFORMA ANTERIOR
+	//INICIO CREAR PLATAFORMA NUEVA CON PATRON BUILDER
+	//Spawn PisosBasicosBuilder and DirectorPisos
+	PisosBasicosBuilder = GetWorld()->SpawnActor<ABuilderPisosBasicos>(ABuilderPisosBasicos::StaticClass());
+	DirectorPisos = GetWorld()->SpawnActor<ADirectorPisos>(ADirectorPisos::StaticClass());
+	//Set the Builder for the Engineer and create the buildings
+	DirectorPisos->SetBuilderPisos(PisosBasicosBuilder);
+	DirectorPisos->ConstruirPiso();
+	//Get the Engineer's Lodging and Logs the created buildings
+	APiso* Piso = DirectorPisos->GetPiso();
+	//Piso->LodgingCharacteristics();
+
+	//FIN CREAR PLATAFORMA CON PATRON BUILDER
+
+	/*FVector posicionDisparador = FVector(1160.0f, 0.0f, 1500.f);
 	FRotator rotacionDisparador = FRotator(0.0f, 0.0f, 10.0f);
 	FTransform SpawnLocationDisparador;
 	SpawnLocationDisparador.SetRotation(FQuat(rotacionDisparador));
@@ -121,7 +140,7 @@ void ADonkeyKong_TestGameMode::BeginPlay()
 
 	ADisparador* disparador01 = GetWorld()->SpawnActor<ADisparador>(ADisparador::StaticClass(), SpawnLocationDisparador);
 
-	
+	*/
 	/*FVector posicionMuro = FVector(1160.0f, 0.0f, 200.f);
 	FRotator rotacionMuro = FRotator(0.0f, 0.0f, 10.0f);
 	FTransform SpawnLocationMuro;
@@ -164,45 +183,45 @@ void ADonkeyKong_TestGameMode::BeginPlay()
 
 
 	//Crear las fabricas
-	AFabricaPosiones* fabricaPosionesBenignas = GetWorld()->SpawnActor<AFabricaPosionesBenignas>(AFabricaPosionesBenignas::StaticClass());
-	APosion* posion = fabricaPosionesBenignas->ordenarPosion("Salud");
-	posion->SetActorLocation(FVector(1160.0f, -800.0f, 200.f));
-	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Potion is %s"), *posion->getNombrePosion()));
-	posion = fabricaPosionesBenignas->ordenarPosion("Poder");
-	posion->SetActorLocation(FVector(1160.0f, -500.0f, 200.f));
-	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Potion is %s"), *posion->getNombrePosion()));
-	posion = fabricaPosionesBenignas->ordenarPosion("Habilidad");
-	posion->SetActorLocation(FVector(1160.0f, -200.0f, 200.f));
-	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Potion is %s"), *posion->getNombrePosion()));
-	posion = fabricaPosionesBenignas->ordenarPosion("Habilidad");
-	posion->SetActorLocation(FVector(1160.0f, 0.0f, 200.f));
-	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Potion is %s"), *posion->getNombrePosion()));
-	
+	//AFabricaPosiones* fabricaPosionesBenignas = GetWorld()->SpawnActor<AFabricaPosionesBenignas>(AFabricaPosionesBenignas::StaticClass());
+	//APosion* posion = fabricaPosionesBenignas->ordenarPosion("Salud");
+	//posion->SetActorLocation(FVector(1160.0f, -800.0f, 200.f));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Potion is %s"), *posion->getNombrePosion()));
+	//posion = fabricaPosionesBenignas->ordenarPosion("Poder");
+	//posion->SetActorLocation(FVector(1160.0f, -500.0f, 200.f));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Potion is %s"), *posion->getNombrePosion()));
+	//posion = fabricaPosionesBenignas->ordenarPosion("Habilidad");
+	//posion->SetActorLocation(FVector(1160.0f, -200.0f, 200.f));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Potion is %s"), *posion->getNombrePosion()));
+	//posion = fabricaPosionesBenignas->ordenarPosion("Habilidad");
+	//posion->SetActorLocation(FVector(1160.0f, 0.0f, 200.f));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Potion is %s"), *posion->getNombrePosion()));
+	//
 
-	AFabricaEnemigos* fabricaEnemigos;
+	//AFabricaEnemigos* fabricaEnemigos;
+	////fabricaEnemigos = NewObject<AFabricaEnemigosFantasia>();
+	//fabricaEnemigos = NewObject<AFabricaEnemigosAnimales>();
+	////fabricaEnemigos = NewObject<AFabricaEnemigosMisticos>();
+
+	//AEnemigo* enemigoTerrestre01 = fabricaEnemigos->FabricarEnemigoTerrestre();
+
+	//FTransform SpawnLocationEnemigo;
+	//SpawnLocationEnemigo.SetLocation(FVector(1860.0f, 0.0f + float(FMath::RandRange(-500, 500)), 360.0f));
+	//SpawnLocationEnemigo.SetRotation(FQuat(FRotator(0.0f, 0.0f, 0.0f)));
+
+	//AEnemigo* enemigoSpawned = GetWorld()->SpawnActor<AEnemigo>(enemigoTerrestre01->GetClass(), SpawnLocationEnemigo);
+
 	//fabricaEnemigos = NewObject<AFabricaEnemigosFantasia>();
-	fabricaEnemigos = NewObject<AFabricaEnemigosAnimales>();
+	//AEnemigo* enemigoTerrestre02 = fabricaEnemigos->FabricarEnemigoTerrestre();
+
+	//SpawnLocationEnemigo.SetLocation(FVector(1860.0f, 0.0f + float(FMath::RandRange(-500, 500)), 360.0f));
+	//GetWorld()->SpawnActor<AEnemigo>(enemigoTerrestre02->GetClass(), SpawnLocationEnemigo);
+
 	//fabricaEnemigos = NewObject<AFabricaEnemigosMisticos>();
+	//AEnemigo* enemigoTerrestre03 = fabricaEnemigos->FabricarEnemigoTerrestre();
 
-	AEnemigo* enemigoTerrestre01 = fabricaEnemigos->FabricarEnemigoTerrestre();
-
-	FTransform SpawnLocationEnemigo;
-	SpawnLocationEnemigo.SetLocation(FVector(1860.0f, 0.0f + float(FMath::RandRange(-500, 500)), 360.0f));
-	SpawnLocationEnemigo.SetRotation(FQuat(FRotator(0.0f, 0.0f, 0.0f)));
-
-	AEnemigo* enemigoSpawned = GetWorld()->SpawnActor<AEnemigo>(enemigoTerrestre01->GetClass(), SpawnLocationEnemigo);
-
-	fabricaEnemigos = NewObject<AFabricaEnemigosFantasia>();
-	AEnemigo* enemigoTerrestre02 = fabricaEnemigos->FabricarEnemigoTerrestre();
-
-	SpawnLocationEnemigo.SetLocation(FVector(1860.0f, 0.0f + float(FMath::RandRange(-500, 500)), 360.0f));
-	GetWorld()->SpawnActor<AEnemigo>(enemigoTerrestre02->GetClass(), SpawnLocationEnemigo);
-
-	fabricaEnemigos = NewObject<AFabricaEnemigosMisticos>();
-	AEnemigo* enemigoTerrestre03 = fabricaEnemigos->FabricarEnemigoTerrestre();
-
-	SpawnLocationEnemigo.SetLocation(FVector(1860.0f, 0.0f + float(FMath::RandRange(-500, 500)), 360.0f));
-	GetWorld()->SpawnActor<AEnemigo>(enemigoTerrestre03->GetClass(), SpawnLocationEnemigo);
+	//SpawnLocationEnemigo.SetLocation(FVector(1860.0f, 0.0f + float(FMath::RandRange(-500, 500)), 360.0f));
+	//GetWorld()->SpawnActor<AEnemigo>(enemigoTerrestre03->GetClass(), SpawnLocationEnemigo);
 
 
 }

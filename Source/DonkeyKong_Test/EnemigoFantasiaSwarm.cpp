@@ -12,12 +12,12 @@ AEnemigoFantasiaSwarm::AEnemigoFantasiaSwarm()
 {
 	//PrimaryActorTick.bCanEverTick = true;
 
-	////static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshContainer(TEXT("Skeleton'/Game/MonsterForSurvivalGame/Mesh/PBR/Swarm08_SK_Skeleton.Swarm08_SK_Skeleton'"));
-	//static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshContainer(TEXT("SkeletalMesh'/Game/AfricanAnimalsPack/Crocodile/Meshes/SK_Crocodile.SK_Crocodile'"));
-	//if (MeshContainer.Succeeded())
-	//{
-	//	GetMesh()->SetSkeletalMesh(MeshContainer.Object);
-	//}
+	//static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshContainer(TEXT("Skeleton'/Game/MonsterForSurvivalGame/Mesh/PBR/Swarm08_SK_Skeleton.Swarm08_SK_Skeleton'"));
+	static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshContainer(TEXT("SkeletalMesh'/Game/MonsterForSurvivalGame/Mesh/PBR/Swarm08_SK.Swarm08_SK'"));
+	if (MeshContainer.Succeeded())
+	{
+		GetMesh()->SetSkeletalMesh(MeshContainer.Object);
+	}
 }
 
 void AEnemigoFantasiaSwarm::Tick(float DeltaTime)

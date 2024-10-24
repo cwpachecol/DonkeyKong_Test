@@ -12,12 +12,12 @@ AEnemigoFantasiaMushroom::AEnemigoFantasiaMushroom()
 {
 	//PrimaryActorTick.bCanEverTick = true;
 
-	////static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshContainer(TEXT("Skeleton'/Game/MonsterForSurvivalGame/Mesh/PBR/Mushroom_Skeleton.Mushroom_Skeleton'"));
-	//static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshContainer(TEXT("SkeletalMesh'/Game/AfricanAnimalsPack/Crocodile/Meshes/SK_Crocodile.SK_Crocodile'"));
-	//if (MeshContainer.Succeeded())
-	//{
-	//	GetMesh()->SetSkeletalMesh(MeshContainer.Object);
-	//}
+	//static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshContainer(TEXT("Skeleton'/Game/MonsterForSurvivalGame/Mesh/PBR/Mushroom_Skeleton.Mushroom_Skeleton'"));
+	static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshContainer(TEXT("SkeletalMesh'/Game/MonsterForSurvivalGame/Mesh/PBR/Mushroom_SK.Mushroom_SK'"));
+	if (MeshContainer.Succeeded())
+	{
+		GetMesh()->SetSkeletalMesh(MeshContainer.Object);
+	}
 }
 
 void AEnemigoFantasiaMushroom::Tick(float DeltaTime)
