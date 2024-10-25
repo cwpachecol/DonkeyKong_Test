@@ -56,84 +56,17 @@ void ADonkeyKong_TestGameMode::BeginPlay()
 	//	MyCharacter->SetActorLocation(NewLocation);
 	//}
 
-	// INICIO CREAR PLATAFORMA 
-	//GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Yellow, TEXT("Creando plataforma"));
-	// Spawn an instance of the AMyFirstActor class at the
-	//default location.
-	//FTransform SpawnLocation;
-	//SpawnLocation.SetLocation(FVector(1160.0f, -210.0f, 140.0f));
-	//SpawnLocation.SetRotation(FQuat(FRotator(0.0f, 0.0f, 0.0f)));
-	//obstaculo01 = GetWorld()->SpawnActor<AObstaculoMuro>(AObstaculoMuro::StaticClass(), SpawnLocation);
-	///*if (player01 != nullptr)
-	//{
-	//	player01->SetObstaculo(obstaculo01);
-	//}*/
-
-	//for (int32 i = 0; i < 5; ++i) {
-	//	aComponentesPlataformaMoviles.Add(FMath::RandRange(2, 7)); // Genera un número entre 2 y 7
-	//}
-
-	//FVector posicionInicial = FVector(1160.0f, -1300.0f, 800.f);
-	//FRotator rotacionInicial = FRotator(0.0f, 0.0f, 10.0f);
-	//FTransform SpawnLocationCP;
-	//float anchoComponentePlataforma = 300.0f;
-
-	//float incrementoAltoComponentePlataforma = 55.0f;
-	//float incrementoAltoEntrePisos = 500.0f;
-	//float incrementoInicioPiso = 100.0f;
-	//float incrementoAnchoComponentePlataforma = -300.0f;
-	//
-	//int numeroPisoComponentePlataformaMovil = 0;
-	//int numeroComponentePlataformaMovil = 4;
-	//
-	//
-	//npp -> Número de pisos por plataforma
-	//for (int npp = 0; npp < 5; npp++) {
-	//	rotacionInicial.Roll = rotacionInicial.Roll * -1;
-	//	incrementoInicioPiso = incrementoInicioPiso * -1;
-	//	incrementoAnchoComponentePlataforma = incrementoAnchoComponentePlataforma * -1;	
-	//	SpawnLocationCP.SetRotation(FQuat(rotacionInicial));
-	//	SpawnLocationCP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z));
-	//	
-	//	for (int ncp = 0; ncp < 10; ncp++) {
-	//		
-	//		if (ncp != (aComponentesPlataformaMoviles[npp] - 1) && ncp != (aComponentesPlataformaMoviles[npp] + 1)) {
-	//			AcomponentePlataforma* cp = GetWorld()->SpawnActor<AcomponentePlataforma>(AcomponentePlataforma::StaticClass(), SpawnLocationCP);
-	//			if (ncp == aComponentesPlataformaMoviles[npp]) {
-	//				if (FMath::RandRange(0, 1))
-	//					cp->setbMoverHorizontalmente(true);
-	//				else
-	//					cp->setbMoverVerticalmente(true);
-	//			}
-	//		}
-	//		posicionInicial.Z = posicionInicial.Z + incrementoAltoComponentePlataforma;
-	//		if (ncp < 9) {
-	//			posicionInicial.Y = posicionInicial.Y + incrementoAnchoComponentePlataforma;
-	//		}
-	//		
-	//		SpawnLocationCP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z));
-
-	//	}
-	//	
-	//	posicionInicial.Z = posicionInicial.Z + incrementoAltoEntrePisos;
-	//	posicionInicial.Y = posicionInicial.Y + incrementoInicioPiso;
-	//}
-
 	// FIN CREAR PLATAFORMA ANTERIOR
 	//INICIO CREAR PLATAFORMA NUEVA CON PATRON BUILDER
 	//Spawn PisosBasicosBuilder and DirectorPisos
 	DirectorPisos = GetWorld()->SpawnActor<ADirectorPisos>(ADirectorPisos::StaticClass());
-
 	PisosBasicosBuilder = GetWorld()->SpawnActor<ABuilderPisosBasicos>(ABuilderPisosBasicos::StaticClass());
-	//PisosIntermediosBuilder = GetWorld()->SpawnActor<ABuilderPisosIntermedios>(ABuilderPisosIntermedios::StaticClass());
+	PisosIntermediosBuilder = GetWorld()->SpawnActor<ABuilderPisosIntermedios>(ABuilderPisosIntermedios::StaticClass());
 	//Set the Builder for the Engineer and create the buildings
 	DirectorPisos->SetBuilderPisos(PisosBasicosBuilder);
 	DirectorPisos->ConstruirPiso();
-	//DirectorPisos->SetBuilderPisos(PisosIntermediosBuilder);
-	//DirectorPisos->ConstruirPiso();
-
-	//Get the Engineer's Lodging and Logs the created buildings
-	//APiso* Piso = DirectorPisos->GetPiso();
+	DirectorPisos->SetBuilderPisos(PisosIntermediosBuilder);
+	DirectorPisos->ConstruirPiso();
 
 	//FIN CREAR PLATAFORMA CON PATRON BUILDER
 

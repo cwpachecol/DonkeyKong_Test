@@ -50,7 +50,7 @@ public:
 	virtual void BuildObstaculos() override;
 	virtual void BuildEscaleras() override;
 
-	void SetDireccionMovimientoComponentePiso(FVector _DireccionMovimientoComponentePiso);
+	//void SetDireccionMovimientoComponentePiso(FVector _DireccionMovimientoComponentePiso);
 	virtual class APiso* GetPiso() override;
 
 

@@ -13,7 +13,7 @@ APiso::APiso()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	NumeroComponentesPiso = 10;
+	/*NumeroComponentesPiso = 10;
 	PosicionInicialPiso = FVector(0.0f, 0.0f, 0.0f);
 	DimensionesComponentePiso = FVector(200.0f, 200.0f, 50.0f);
 	RotacionComponentePiso = FRotator(0.0f, 0.0f, 0.0f);
@@ -25,7 +25,7 @@ APiso::APiso()
 	NumeroObstaculos = 2;
 
 	NumeroEscaleras = 3;
-	
+	*/
 }
 
 // Called when the game starts or when spawned
