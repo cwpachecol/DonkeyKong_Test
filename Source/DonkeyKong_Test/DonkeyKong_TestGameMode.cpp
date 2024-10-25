@@ -125,12 +125,12 @@ void ADonkeyKong_TestGameMode::BeginPlay()
 	DirectorPisos = GetWorld()->SpawnActor<ADirectorPisos>(ADirectorPisos::StaticClass());
 
 	PisosBasicosBuilder = GetWorld()->SpawnActor<ABuilderPisosBasicos>(ABuilderPisosBasicos::StaticClass());
-	PisosIntermediosBuilder = GetWorld()->SpawnActor<ABuilderPisosIntermedios>(ABuilderPisosIntermedios::StaticClass());
+	//PisosIntermediosBuilder = GetWorld()->SpawnActor<ABuilderPisosIntermedios>(ABuilderPisosIntermedios::StaticClass());
 	//Set the Builder for the Engineer and create the buildings
 	DirectorPisos->SetBuilderPisos(PisosBasicosBuilder);
 	DirectorPisos->ConstruirPiso();
-	DirectorPisos->SetBuilderPisos(PisosIntermediosBuilder);
-	DirectorPisos->ConstruirPiso();
+	//DirectorPisos->SetBuilderPisos(PisosIntermediosBuilder);
+	//DirectorPisos->ConstruirPiso();
 
 	//Get the Engineer's Lodging and Logs the created buildings
 	//APiso* Piso = DirectorPisos->GetPiso();

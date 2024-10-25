@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\DonkeyKong_Test.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{C67B3B61-3415-474C-958E-D1ECE0FBD583}</UniqueIdentifier>
+      <UniqueIdentifier>{1F6086FF-2B19-457B-ACF2-B1165246DCAE}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\DonkeyKong_Test.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{0DF83D1C-73E2-4B0C-8FEA-682E590E8DD2}</UniqueIdentifier>
+      <UniqueIdentifier>{6532D207-14DF-4DE6-955B-2DB9DC6E92E3}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\DonkeyKong_Test">
-      <UniqueIdentifier>{FB4FA55C-75A2-4110-A750-C0E667AA60C2}</UniqueIdentifier>
+      <UniqueIdentifier>{5043A8A7-684C-436F-8BC9-6038C56B08F0}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\DonkeyKong_Test\Barril.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>

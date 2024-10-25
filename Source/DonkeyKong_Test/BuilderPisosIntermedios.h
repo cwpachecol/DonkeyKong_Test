@@ -31,6 +31,7 @@ private:
 	FVector DimensionesComponentePiso;
 	FVector DireccionUbicacionComponentePiso;
 	FVector DireccionRotacionComponentePiso;
+	FVector DireccionMovimientoComponentePiso;
 	int16 NumeroComponentesPiso;
 	int16 NumeroComponentesPisoGenerados;
 
@@ -49,6 +50,7 @@ public:
 	virtual void BuildObstaculos() override;
 	virtual void BuildEscaleras() override;
 
+	void SetDireccionMovimientoComponentePiso(FVector _DireccionMovimientoComponentePiso);
 	virtual class APiso* GetPiso() override;
 
 

@@ -17,22 +17,17 @@ AComponentePiso::AComponentePiso()
 
 	FVector NewScale(2.0f, 3.0f, 0.5f); // Cambia estos valores según tus necesidades
 	SetActorScale3D(NewScale);
-	bMoverHorizontalmente = false;
-	bMoverVerticalmente = false;
-	bDetener = false;
+	bComponenteMovil = false;
 
-	posicionInicio = FVector(0.0f, 0.0f, 0.0f);
-	posicionFinal = FVector(0.0f, 0.0f, 0.0f);
-	velocidad = 2.0f;
-	anchoComponentePlataforma = 300.0f;
-	altoComponentePlataforma = 50.0f;
-	fondoComponentePlataforma = 200.0f;
+	SetDimensiones(FVector(300.0f, 50.0f, 200.0f));
 
-	desplazamientoComponentePlataforma = FVector(0.0f, 1.0f, 1.0f);
+	SetDireccionMovimiento(FVector(1.0f, 1.0f, 1.0f));
+	SetVelocidadMovimiento(FVector(2.0f, 2.0f, 2.0f));
+	SetDesplazamientoMovimiento(FVector(300.0f, 400.0f, 500.0f));
 
-	posicionActual = FVector(0.0f, 0.0f, 0.0f);
-	posicionInicio = FVector(0.0f, 0.0f, 0.0f);
-	posicionFinal = FVector(0.0f, 0.0f, 0.0f);
+	SetPosicionInicial(FVector(0.0f, 0.0f, 0.0f));
+	SetPosicionActual(FVector(0.0f, 0.0f, 0.0f));
+	SetPosicionFinal(FVector(0.0f, 0.0f, 0.0f));
 
 }
 
@@ -41,14 +36,9 @@ void AComponentePiso::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	posicionActual = GetActorLocation();
-	posicionInicio = FVector(posicionActual.X - desplazamientoComponentePlataforma.X, posicionActual.Y - anchoComponentePlataforma - desplazamientoComponentePlataforma.Y, posicionActual.Z - altoComponentePlataforma * 5 - desplazamientoComponentePlataforma.Z);
-	posicionFinal = FVector(posicionActual.X + desplazamientoComponentePlataforma.X, posicionActual.Y + anchoComponentePlataforma + desplazamientoComponentePlataforma.Y, posicionActual.Z + altoComponentePlataforma * 5 + desplazamientoComponentePlataforma.Z);
-	incrementoZ = 2.0f;
-
-	bDeIzquierdaADerecha = true;
-	bDeArribaAAbajo = true;
-	dDeAdelanteAAtras = true;
+	PosicionActual = GetActorLocation();
+	PosicionInicial = PosicionActual - DesplazamientoMovimiento;
+	PosicionFinal = PosicionActual + DesplazamientoMovimiento;
 }
 
 // Called every frame
@@ -56,51 +46,31 @@ void AComponentePiso::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (!bDetener) {
-		if (bMoverVerticalmente)
-		{
-			if (bDeArribaAAbajo)
-			{
-				posicionActual.Z += desplazamientoComponentePlataforma.Z * velocidad;
-				if (posicionActual.Z > posicionFinal.Z)
-				{
-					bDeArribaAAbajo = false;
-				}
-			}
-			else
-			{
-				posicionActual.Z -= desplazamientoComponentePlataforma.Z * velocidad;
-				if (posicionActual.Z < posicionInicio.Z)
-				{
-					bDeArribaAAbajo = true;
-				}
-			}
-
+	if (bComponenteMovil) {
+		PosicionActual += DireccionMovimiento * VelocidadMovimiento;
+		if (PosicionActual.X >= PosicionFinal.X) {
+			DireccionMovimiento.X = -1.0f;
+		}
+		else if (PosicionActual.X <= PosicionInicial.X) {
+			DireccionMovimiento.X = 1.0f;
+		}
+		
+		if (PosicionActual.Y >= PosicionFinal.Y) {
+			DireccionMovimiento.Y = -1.0f;
+		}
+		else if (PosicionActual.Y <= PosicionInicial.Y) {
+			DireccionMovimiento.Y = 1.0f;
 		}
 
-		if (bMoverHorizontalmente)
-		{
-			if (bDeIzquierdaADerecha)
-			{
-				posicionActual.Y += desplazamientoComponentePlataforma.Y * velocidad;
-				if (posicionActual.Y > posicionFinal.Y)
-				{
-					bDeIzquierdaADerecha = false;
-				}
-			}
-			else
-			{
-				posicionActual.Y -= desplazamientoComponentePlataforma.Y * velocidad;
-				if (posicionActual.Y < posicionInicio.Y)
-				{
-					bDeIzquierdaADerecha = true;
-				}
-			}
+		if (PosicionActual.Z >= PosicionFinal.Z) {
+			DireccionMovimiento.Z = -1.0f;
 		}
+		else if (PosicionActual.Z <= PosicionInicial.Z) {
+			DireccionMovimiento.Z = 1.0f;
+		}
+
+		SetActorLocation(PosicionActual);
 	}
-
-	SetActorLocation(posicionActual);
-
 
 }
 

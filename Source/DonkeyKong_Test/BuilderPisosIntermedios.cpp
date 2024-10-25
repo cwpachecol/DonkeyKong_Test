@@ -63,7 +63,10 @@ AComponentePiso* ABuilderPisosIntermedios::BuildComponenteFijoPiso()
 
 AComponentePiso* ABuilderPisosIntermedios::BuildComponenteMovilPiso()
 {
-	return nullptr;
+	AComponentePiso* ComponentePisoActual = BuildComponentePiso();
+	ComponentePisoActual->SetDireccionMovimiento(FVector(0.0f, 1.0f, 1.0f));
+
+	return ComponentePisoActual;
 }
 
 void ABuilderPisosIntermedios::BuildComponentesPiso()
@@ -82,6 +85,12 @@ void ABuilderPisosIntermedios::BuildObstaculos()
 
 void ABuilderPisosIntermedios::BuildEscaleras()
 {
+}
+
+void ABuilderPisosIntermedios::SetDireccionMovimientoComponentePiso(FVector _DireccionMovimientoComponentePiso)
+{
+	DireccionMovimientoComponentePiso = _DireccionMovimientoComponentePiso;
+
 }
 
 APiso* ABuilderPisosIntermedios::GetPiso()

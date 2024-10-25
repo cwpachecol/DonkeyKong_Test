@@ -72,7 +72,19 @@ AComponentePiso* ABuilderPisosBasicos::BuildComponenteFijoPiso()
 
 AComponentePiso* ABuilderPisosBasicos::BuildComponenteMovilPiso()
 {
-	return nullptr;
+	PosicionSpawnComponentePiso.Y = PosicionSpawnComponentePiso.Y + DireccionUbicacionComponentePiso.Y * (DimensionesComponentePiso.Y + DistanciaEntreComponentesPiso.Y);
+	PosicionSpawnComponentePiso.Z = PosicionSpawnComponentePiso.Z + DireccionUbicacionComponentePiso.Z * (DimensionesComponentePiso.Z + DistanciaEntreComponentesPiso.Z);
+	AComponentePiso* ComponentePisoActual = GetWorld()->SpawnActor<AComponentePiso>(AComponentePiso::StaticClass(), PosicionSpawnComponentePiso, RotacionSpawnComponentePiso);
+	ComponentePisoActual->SetDireccionMovimiento(FVector(0.0f, 1.0f, 1.0f));
+	ComponentePisoActual->SetComponenteMovil(true);
+	if (ComponentePisoActual) {
+		NumeroComponentesPisoGenerados++;
+		return ComponentePisoActual;
+	}
+	else {
+		UE_LOG(LogTemp, Warning, TEXT("No se pudo generar el componente de piso"));
+		return nullptr;
+	}
 }
 
 void ABuilderPisosBasicos::BuildComponentesPiso()
@@ -80,7 +92,12 @@ void ABuilderPisosBasicos::BuildComponentesPiso()
 	RotacionSpawnComponentePiso.Roll = RotacionSpawnComponentePiso.Roll * DireccionRotacionComponentePiso.Z;
 
 	for (int16 i = 0; i < NumeroComponentesPiso; i++) {
-		Piso->aComponentesPiso.Add(BuildComponentePiso());
+		if (FMath::RandRange(0, 9) > 5) {
+			Piso->aComponentesPiso.Add(BuildComponenteMovilPiso());
+		}
+		else {
+			Piso->aComponentesPiso.Add(BuildComponentePiso());
+		}
 	}
 	
 }

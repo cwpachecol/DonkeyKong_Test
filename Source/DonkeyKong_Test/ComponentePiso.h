@@ -21,33 +21,31 @@ protected:
 
 	UStaticMeshComponent* meshPlataforma;
 
-	bool bMoverHorizontalmente;
-	bool bMoverVerticalmente;
-	bool bMoverLateralmente;
+	FVector Dimensiones;
 
-	FVector posicionInicio;
-	FVector posicionActual;
-	FVector posicionFinal;
-	float incrementoZ;
-	bool bDetener;
-	float velocidad;
-	float anchoComponentePlataforma;
-	float altoComponentePlataforma;
-	float fondoComponentePlataforma;
+	FVector DireccionMovimiento;
+	FVector VelocidadMovimiento;
+	FVector DesplazamientoMovimiento;
 
-	FVector desplazamientoComponentePlataforma;
-	bool bDeIzquierdaADerecha;
-	bool bDeArribaAAbajo;
-	bool dDeAdelanteAAtras;
+	FVector PosicionInicial;
+	FVector PosicionActual;
+	FVector PosicionFinal;
 
+	bool bComponenteMovil;
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	FORCEINLINE void setbMoverHorizontalmente(bool _bMoverHorizontalmente) { bMoverHorizontalmente = _bMoverHorizontalmente; }
-	FORCEINLINE void setbMoverVerticalmente(bool _bMoverVerticalmente) { bMoverVerticalmente = _bMoverVerticalmente; }
-	FORCEINLINE void setbMoverLateralmente(bool _bMoverLateralmente) { bMoverLateralmente = _bMoverLateralmente; }
+	FORCEINLINE void SetDimensiones(FVector _Dimensiones) { Dimensiones = _Dimensiones; }
 
-	FORCEINLINE void setbDetener(bool _bDetener) { bDetener = _bDetener; }
+	FORCEINLINE void SetDireccionMovimiento(FVector _DireccionMovimiento) { DireccionMovimiento = _DireccionMovimiento; }
+	FORCEINLINE void SetVelocidadMovimiento(FVector _VelocidadMovimiento) { VelocidadMovimiento = _VelocidadMovimiento; }
+	FORCEINLINE void SetDesplazamientoMovimiento(FVector _DesplazamientoMovimiento) { DesplazamientoMovimiento = _DesplazamientoMovimiento; }
+
+	FORCEINLINE void SetPosicionInicial(FVector _PosicionInicial) { PosicionInicial = _PosicionInicial; }
+	FORCEINLINE void SetPosicionActual(FVector _PosicionActual) { PosicionActual = _PosicionActual; }
+	FORCEINLINE void SetPosicionFinal(FVector _PosicionFinal) { PosicionFinal = _PosicionFinal; }
+
+	FORCEINLINE void SetComponenteMovil(bool _bComponenteMovil) { bComponenteMovil = _bComponenteMovil; }
 };
