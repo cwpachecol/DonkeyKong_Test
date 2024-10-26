@@ -2,6 +2,8 @@
 
 
 #include "Obstaculo.h"
+#include "UObject/ConstructorHelpers.h"
+
 
 // Sets default values
 AObstaculo::AObstaculo()
@@ -10,33 +12,34 @@ AObstaculo::AObstaculo()
 	PrimaryActorTick.bCanEverTick = true;
 
 	ConstructorHelpers::FObjectFinder<UStaticMesh> MeshAsset = ConstructorHelpers::FObjectFinder<UStaticMesh>(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
-	MeshObstaculo = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+	//MeshObstaculo = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 
-	MeshObstaculo->SetStaticMesh(MeshAsset.Object);
-	RootComponent = MeshObstaculo;
+	MeshElementoPlataforma->SetStaticMesh(MeshAsset.Object);
+	//RootComponent = MeshObstaculo;
 
-	// Supongamos que tienes un puntero al actor llamado MyActor
-	FVector NewScale(2.0f, 0.25f, 2.0f); // Cambia estos valores según tus necesidades
-	SetActorScale3D(NewScale);
+	//FVector NewScale(2.0f, 3.0f, 0.5f); // Cambia estos valores según tus necesidades
+	//SetActorScale3D(NewScale);
+	//bMovil = false;
 
-	/*zPosicionInicial = 0.0f;
-	zPosicionActual = 0.0f;
-	zPosicionFinal = 0.0f;
-	zIncrementoZ = 5.0f;*/
-	//subir = true;
+	//SetDimensiones(FVector(300.0f, 50.0f, 200.0f));
+
+	//SetDireccionMovimiento(FVector(1.0f, 1.0f, 1.0f));
+	//SetVelocidadMovimiento(FVector(2.0f, 2.0f, 2.0f));
+	//SetDesplazamientoMovimiento(FVector(300.0f, 400.0f, 500.0f));
+
+	//SetPosicionInicial(FVector(0.0f, 0.0f, 0.0f));
+	//SetPosicionActual(FVector(0.0f, 0.0f, 0.0f));
+	//SetPosicionFinal(FVector(0.0f, 0.0f, 0.0f));
 }
 
 // Called when the game starts or when spawned
 void AObstaculo::BeginPlay()
 {
 	Super::BeginPlay();
-	posicionActual = FVector(0.0f, 0.0f, 0.0f);
-	posicionActual = GetActorLocation();
-	posicionInicial = posicionActual;
-	posicionFinal = posicionActual + FVector(0.0f, 0.0f, 200.0f);
-	incrementoZ = 2.0f;
-	subir = false;
-	setDetener(false);
+
+	/*PosicionActual = GetActorLocation();
+	PosicionInicial = PosicionActual - DesplazamientoMovimiento;
+	PosicionFinal = PosicionActual + DesplazamientoMovimiento;*/
 }
 
 // Called every frame
@@ -44,33 +47,24 @@ void AObstaculo::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	//zPosicionActual = GetActorLocation().Z;
+	/*if (bMovil) {
+		PosicionActual += DireccionMovimiento * VelocidadMovimiento;
 
-	if (!detener) {
-		if (!subir)
-		{
-			if (posicionActual.Z < posicionFinal.Z)
-			{
-				posicionActual.Z += incrementoZ;
-			}
-			else
-			{
-				subir = true;
-			}
+		if (PosicionActual.X >= PosicionFinal.X || PosicionActual.X <= PosicionInicial.X) {
+			DireccionMovimiento.X *= -1.0f;
 		}
-		else
-		{
-			if (posicionActual.Z > posicionInicial.Z)
-			{
-				posicionActual.Z -= incrementoZ;
-			}
-			else {
-				subir = false;
-			}
+
+		if (PosicionActual.Y >= PosicionFinal.Y || PosicionActual.Y <= PosicionInicial.Y) {
+			DireccionMovimiento.Y *= -1.0f;
 		}
+
+		if (PosicionActual.Z >= PosicionFinal.Z || PosicionActual.Z <= PosicionInicial.Z) {
+			DireccionMovimiento.Z *= -1.0f;
+		}
+
+		SetActorLocation(PosicionActual);
 	}
-	/*zPosicionActual += zIncrementoZ;*/
-	SetActorLocation(posicionActual);
 
+	*/
 }
 

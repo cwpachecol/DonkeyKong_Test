@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "ElementoPlataforma.h"
 #include "ComponentePiso.generated.h"
 
 UCLASS()
-class DONKEYKONG_TEST_API AComponentePiso : public AActor
+class DONKEYKONG_TEST_API AComponentePiso : public AElementoPlataforma
 {
 	GENERATED_BODY()
 	
@@ -19,7 +20,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UStaticMeshComponent* meshPlataforma;
+	/*UStaticMeshComponent* meshPlataforma;
 
 	FVector Dimensiones;
 
@@ -31,13 +32,13 @@ protected:
 	FVector PosicionActual;
 	FVector PosicionFinal;
 
-	bool bComponenteMovil;
+	bool bMovil;*/
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	FORCEINLINE void SetDimensiones(FVector _Dimensiones) { Dimensiones = _Dimensiones; }
+	/*FORCEINLINE void SetDimensiones(FVector _Dimensiones) { Dimensiones = _Dimensiones; }
 
 	FORCEINLINE void SetDireccionMovimiento(FVector _DireccionMovimiento) { DireccionMovimiento = _DireccionMovimiento; }
 	FORCEINLINE void SetVelocidadMovimiento(FVector _VelocidadMovimiento) { VelocidadMovimiento = _VelocidadMovimiento; }
@@ -47,5 +48,5 @@ public:
 	FORCEINLINE void SetPosicionActual(FVector _PosicionActual) { PosicionActual = _PosicionActual; }
 	FORCEINLINE void SetPosicionFinal(FVector _PosicionFinal) { PosicionFinal = _PosicionFinal; }
 
-	FORCEINLINE void SetComponenteMovil(bool _bComponenteMovil) { bComponenteMovil = _bComponenteMovil; }
+	FORCEINLINE void SetMovil(bool _bMovil) { bMovil = _bMovil; }*/
 };

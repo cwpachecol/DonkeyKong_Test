@@ -7,7 +7,6 @@
 #include "DonkeyKong_TestGameMode.generated.h"
 
 class AObstaculoMuro;
-class AcomponentePlataforma;
 class ADonkeyKong_TestCharacter;
 class ABarril;
 class AEsfera;
@@ -28,7 +27,6 @@ public:
 	AObstaculoMuro* obstaculo01;
 	ADonkeyKong_TestCharacter* player01;
 
-	TArray<AcomponentePlataforma*> componentesPlataforma;
 	TArray<ABarril*> barriles;
 	TMap<int32, AEsfera*> esferasMap;
 

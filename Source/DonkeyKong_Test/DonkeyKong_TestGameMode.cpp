@@ -5,7 +5,6 @@
 #include "UObject/ConstructorHelpers.h"
 #include "ObstaculoMuro.h"
 #include "Capsula.h"
-#include "componentePlataforma.h"
 #include "Barril.h"
 #include "Esfera.h"
 #include "GameFramework/Character.h"

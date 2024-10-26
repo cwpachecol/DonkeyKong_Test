@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\DonkeyKong_Test.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{1F6086FF-2B19-457B-ACF2-B1165246DCAE}</UniqueIdentifier>
+      <UniqueIdentifier>{18A6ACE1-57EB-4076-B0BB-80A2067B1FE4}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\DonkeyKong_Test.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{6532D207-14DF-4DE6-955B-2DB9DC6E92E3}</UniqueIdentifier>
+      <UniqueIdentifier>{356C81FB-6F4D-4FD1-890F-297936F38D98}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\DonkeyKong_Test">
-      <UniqueIdentifier>{5043A8A7-684C-436F-8BC9-6038C56B08F0}</UniqueIdentifier>
+      <UniqueIdentifier>{BEA3ECF3-B282-4E47-9B69-62EDD2028DAE}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\DonkeyKong_Test\Barril.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
@@ -68,12 +68,6 @@
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\DonkeyKong_Test\ComponentePiso.h">
-      <Filter>Source\DonkeyKong_Test</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\DonkeyKong_Test\componentePlataforma.cpp">
-      <Filter>Source\DonkeyKong_Test</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\DonkeyKong_Test\componentePlataforma.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_Test\DirectorPisos.cpp">
@@ -113,6 +107,12 @@
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\DonkeyKong_Test\DonkeyKong_TestGameMode.h">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\ElementoPlataforma.cpp">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\ElementoPlataforma.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_Test\Enemigo.cpp">
@@ -305,6 +305,12 @@
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\DonkeyKong_Test\Inventario.h">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\MurallaPiedra.cpp">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\MurallaPiedra.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_Test\Muro.cpp">

@@ -87,6 +87,6 @@ void ADonkeyKong_TestCharacter::Parar()
 {
 	//obstaculo01->setIncrementoZ(0.0f);
 	detener = !detener;
-	obstaculo01->setDetener(detener);
+	obstaculo01->SetMovil(detener);
 }
 

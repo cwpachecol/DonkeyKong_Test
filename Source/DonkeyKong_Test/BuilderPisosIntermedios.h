@@ -11,6 +11,8 @@ class APiso;
 class AComponentePiso;
 class AObstaculo;
 class AEscalera;
+class AMurallaPiedra;
+
 
 UCLASS()
 class DONKEYKONG_TEST_API ABuilderPisosIntermedios : public AActor, public IBuilderPisos
@@ -22,19 +24,7 @@ public:
 	ABuilderPisosIntermedios();
 
 private:
-	UPROPERTY(VisibleAnywhere, Category = "Piso")
-	APiso* Piso;
-
-	FVector PosicionSpawnComponentePiso;
-	FRotator RotacionSpawnComponentePiso;
-	FVector DistanciaEntreComponentesPiso;
-	FVector DimensionesComponentePiso;
-	FVector DireccionUbicacionComponentePiso;
-	FVector DireccionRotacionComponentePiso;
-	FVector DireccionMovimientoComponentePiso;
-	int16 NumeroComponentesPiso;
-	int16 NumeroComponentesPisoGenerados;
-
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -43,15 +33,15 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	AComponentePiso* BuildComponentePiso();
-	AComponentePiso* BuildComponenteFijoPiso();
-	AComponentePiso* BuildComponenteMovilPiso();
+	virtual AComponentePiso* BuildComponentePiso() override;
+	virtual AMurallaPiedra* BuildMurallaPiedra() override;
+
 	virtual void BuildComponentesPiso() override;
 	virtual void BuildObstaculos() override;
 	virtual void BuildEscaleras() override;
+	virtual void BuildAdornos() override;
 
-	//void SetDireccionMovimientoComponentePiso(FVector _DireccionMovimientoComponentePiso);
-	virtual class APiso* GetPiso() override;
+	virtual APiso* GetPiso() override;
 
 
 };
