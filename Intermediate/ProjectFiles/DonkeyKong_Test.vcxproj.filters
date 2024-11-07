@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\DonkeyKong_Test.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{18A6ACE1-57EB-4076-B0BB-80A2067B1FE4}</UniqueIdentifier>
+      <UniqueIdentifier>{0672675E-ED8B-4DD1-A657-EE3CC83ED8AB}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\DonkeyKong_Test.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{356C81FB-6F4D-4FD1-890F-297936F38D98}</UniqueIdentifier>
+      <UniqueIdentifier>{465EB699-E089-499F-AB93-FD0AE4261ED5}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\DonkeyKong_Test">
-      <UniqueIdentifier>{BEA3ECF3-B282-4E47-9B69-62EDD2028DAE}</UniqueIdentifier>
+      <UniqueIdentifier>{471FF443-17E5-4062-873E-3F9D95E4102F}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\DonkeyKong_Test\Barril.cpp">
       <Filter>Source\DonkeyKong_Test</Filter>
@@ -257,6 +257,24 @@
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\DonkeyKong_Test\Esfera.h">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EstrategiaMovientoAleatorio.cpp">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EstrategiaMovientoAleatorio.h">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EstrategiaMovimiento.cpp">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EstrategiaMovimiento.h">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_Test\EstrategiaMovimientoHorizontal.cpp">
+      <Filter>Source\DonkeyKong_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_Test\EstrategiaMovimientoHorizontal.h">
       <Filter>Source\DonkeyKong_Test</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_Test\FabricaEnemigos.cpp">

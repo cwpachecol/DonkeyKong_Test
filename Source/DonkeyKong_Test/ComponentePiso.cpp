@@ -36,9 +36,9 @@ void AComponentePiso::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	PosicionActual = GetActorLocation();
+	/*PosicionActual = GetActorLocation();
 	PosicionInicial = PosicionActual - DesplazamientoMovimiento;
-	PosicionFinal = PosicionActual + DesplazamientoMovimiento;
+	PosicionFinal = PosicionActual + DesplazamientoMovimiento;*/
 }
 
 // Called every frame
@@ -46,23 +46,23 @@ void AComponentePiso::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (bMovil) {
-		PosicionActual += DireccionMovimiento * VelocidadMovimiento;
+	//if (bMovil) {
+	//	PosicionActual += DireccionMovimiento * VelocidadMovimiento;
 
-		if (PosicionActual.X >= PosicionFinal.X || PosicionActual.X <= PosicionInicial.X) {
-			DireccionMovimiento.X *= -1.0f;
-		}
+	//	if (PosicionActual.X >= PosicionFinal.X || PosicionActual.X <= PosicionInicial.X) {
+	//		DireccionMovimiento.X *= -1.0f;
+	//	}
 
-		if (PosicionActual.Y >= PosicionFinal.Y || PosicionActual.Y <= PosicionInicial.Y) {
-			DireccionMovimiento.Y *= -1.0f;
-		}
+	//	if (PosicionActual.Y >= PosicionFinal.Y || PosicionActual.Y <= PosicionInicial.Y) {
+	//		DireccionMovimiento.Y *= -1.0f;
+	//	}
 
-		if (PosicionActual.Z >= PosicionFinal.Z || PosicionActual.Z <= PosicionInicial.Z) {
-			DireccionMovimiento.Z *= -1.0f;
-		}
-		
-		SetActorLocation(PosicionActual);
-	}
+	//	if (PosicionActual.Z >= PosicionFinal.Z || PosicionActual.Z <= PosicionInicial.Z) {
+	//		DireccionMovimiento.Z *= -1.0f;
+	//	}
+	//	
+	//	SetActorLocation(PosicionActual);
+	//}
 
 }
 

@@ -29,7 +29,7 @@
 #include "BuilderPisosIntermedios.h"
 #include "DirectorPisos.h"
 #include "Piso.h"
-
+#include "EstrategiaMovientoAleatorio.h"
 
 ADonkeyKong_TestGameMode::ADonkeyKong_TestGameMode()
 {
@@ -135,18 +135,23 @@ void ADonkeyKong_TestGameMode::BeginPlay()
 	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Potion is %s"), *posion->getNombrePosion()));
 	//
 
-	//AFabricaEnemigos* fabricaEnemigos;
-	////fabricaEnemigos = NewObject<AFabricaEnemigosFantasia>();
-	//fabricaEnemigos = NewObject<AFabricaEnemigosAnimales>();
-	////fabricaEnemigos = NewObject<AFabricaEnemigosMisticos>();
+	AFabricaEnemigos* fabricaEnemigos;
+	//fabricaEnemigos = NewObject<AFabricaEnemigosFantasia>();
+	fabricaEnemigos = NewObject<AFabricaEnemigosAnimales>();
+	//fabricaEnemigos = NewObject<AFabricaEnemigosMisticos>();
 
-	//AEnemigo* enemigoTerrestre01 = fabricaEnemigos->FabricarEnemigoTerrestre();
+	AEnemigo* enemigoTerrestre01 = fabricaEnemigos->FabricarEnemigoTerrestre();
+	AEstrategiaMovientoAleatorio* estrategiaMovimientoAleatorio = GetWorld()->SpawnActor<AEstrategiaMovientoAleatorio>(AEstrategiaMovientoAleatorio::StaticClass());
+		
+	/*enemigoTerrestre01->SetEstrategiaMovimiento(estrategiaMovimientoAleatorio);
+	enemigoTerrestre01->SetEnMovimiento(true);*/
+	FTransform SpawnLocationEnemigo;
+	SpawnLocationEnemigo.SetLocation(FVector(1860.0f, 0.0f + float(FMath::RandRange(-500, 500)), 360.0f));
+	SpawnLocationEnemigo.SetRotation(FQuat(FRotator(0.0f, 0.0f, 0.0f)));
 
-	//FTransform SpawnLocationEnemigo;
-	//SpawnLocationEnemigo.SetLocation(FVector(1860.0f, 0.0f + float(FMath::RandRange(-500, 500)), 360.0f));
-	//SpawnLocationEnemigo.SetRotation(FQuat(FRotator(0.0f, 0.0f, 0.0f)));
-
-	//AEnemigo* enemigoSpawned = GetWorld()->SpawnActor<AEnemigo>(enemigoTerrestre01->GetClass(), SpawnLocationEnemigo);
+	AEnemigo* enemigoSpawned = GetWorld()->SpawnActor<AEnemigo>(enemigoTerrestre01->GetClass(), SpawnLocationEnemigo);
+	enemigoSpawned->SetEstrategiaMovimiento(estrategiaMovimientoAleatorio);
+	enemigoSpawned->SetEnMovimiento(true);
 
 	//fabricaEnemigos = NewObject<AFabricaEnemigosFantasia>();
 	//AEnemigo* enemigoTerrestre02 = fabricaEnemigos->FabricarEnemigoTerrestre();

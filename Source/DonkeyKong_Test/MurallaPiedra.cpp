@@ -16,10 +16,9 @@ AMurallaPiedra::AMurallaPiedra()
 	//SetActorScale3D(NewScale);
 	bMovil = false;
 		
-	SetRotaciones(FRotator(0.0f, 0.0f, 0.0f));
 	SetDireccionMovimiento(FVector(1.0f, 1.0f, 1.0f));
-	SetVelocidadMovimiento(FVector(0.0f, 0.0f, 0.0f));
-	SetDesplazamientoMovimiento(FVector(0.0f, 0.0f, 0.0f));
+	SetVelocidadMovimiento(FVector(2.0f, 2.0f, 2.0f));
+	SetDesplazamientoMovimiento(FVector(300.0f, 400.0f, 500.0f));
 
 	SetPosicionInicial(FVector(0.0f, 0.0f, 0.0f));
 	SetPosicionActual(FVector(0.0f, 0.0f, 0.0f));

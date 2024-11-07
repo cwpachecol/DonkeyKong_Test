@@ -5,6 +5,8 @@
 #include "Animation/AnimSequence.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "UObject/ConstructorHelpers.h"
+#include "EstrategiaMovimiento.h"
+
 
 //#include "MyAssetManager.h"
 
@@ -29,13 +31,14 @@ AEnemigo::AEnemigo()
 	//}
 
 	//bIsRunning = true;
+	bEnMovimiento = false;
 }
 
 // Called when the game starts or when spawned
 void AEnemigo::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	oEstrategiaMovimiento = nullptr;
 }
 
 // Called every frame
@@ -47,6 +50,10 @@ void AEnemigo::Tick(float DeltaTime)
 	//{
 	//	PlayRunAnimation();
 	//}
+	if (bEnMovimiento)
+	{
+		Mover();
+	}
 }
 
 // Called to bind functionality to input
@@ -90,3 +97,29 @@ void AEnemigo::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 //	//	}
 //	//}
 //}
+
+void AEnemigo::SetEstrategiaMovimiento(AActor* _EstrategiaMovimiento)
+{
+	oEstrategiaMovimiento = Cast<IEstrategiaMovimiento>(_EstrategiaMovimiento);
+	
+	//Log Error if the cast failed
+	if (!oEstrategiaMovimiento)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Red, TEXT("Conversion invalida! Revise los log, para mayor detalle."));
+		UE_LOG(LogTemp, Error, TEXT("ModificarEstrategiaMovimiento(): El actor no es una estrategia de movimiento"));
+	}
+}
+
+void AEnemigo::Task(const FString& Task)
+{
+}
+
+void AEnemigo::Task(const TArray<FString>& Tasks)
+{
+}
+
+void AEnemigo::Mover()
+{
+	oEstrategiaMovimiento->Moverse();
+}
+

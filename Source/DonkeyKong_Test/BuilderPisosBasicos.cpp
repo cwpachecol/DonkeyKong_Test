@@ -69,6 +69,8 @@ AMurallaPiedra* ABuilderPisosBasicos::BuildMurallaPiedra()
 	AMurallaPiedra* MurallaPiedraLocal = GetWorld()->SpawnActor<AMurallaPiedra>(AMurallaPiedra::StaticClass(), PosicionSpawnMurallaPiedra, RotacionSpawnMurallaPiedra);
 	MurallaPiedraLocal->SetRotaciones(FRotator(0.0f, -90.0f, 0.0f));
 	if (MurallaPiedraLocal) {
+		
+		MurallaPiedraLocal->SetMovil(true);
 		return MurallaPiedraLocal;
 	}
 	else {
