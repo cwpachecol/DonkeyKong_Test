@@ -50,6 +50,18 @@ ADonkeyKong_TestCharacter::ADonkeyKong_TestCharacter()
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 }
 
+void ADonkeyKong_TestCharacter::UsarArmadura()
+{
+}
+
+void ADonkeyKong_TestCharacter::UsarPoder()
+{
+}
+
+void ADonkeyKong_TestCharacter::UsarHabilidad()
+{
+}
+
 //////////////////////////////////////////////////////////////////////////
 // Input
 

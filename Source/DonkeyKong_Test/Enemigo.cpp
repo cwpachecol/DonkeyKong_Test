@@ -6,6 +6,9 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "UObject/ConstructorHelpers.h"
 #include "EstrategiaMovimiento.h"
+#include "StadoEnemigo.h"
+#include "Descansando.h"
+#include "EstadoEnemgioEnojado.h"
 
 
 //#include "MyAssetManager.h"
@@ -110,16 +113,57 @@ void AEnemigo::SetEstrategiaMovimiento(AActor* _EstrategiaMovimiento)
 	}
 }
 
-void AEnemigo::Task(const FString& Task)
-{
-}
-
-void AEnemigo::Task(const TArray<FString>& Tasks)
-{
-}
-
 void AEnemigo::Mover()
 {
 	oEstrategiaMovimiento->Moverse();
+}
+
+void AEnemigo::Moverse()
+{
+	estadoEnemigo->Moverse();
+}
+
+void AEnemigo::Atacar()
+{
+	estadoEnemigo->Atacar();
+}
+
+void AEnemigo::Tarea(const FString& _Tarea)
+{
+	if (_Tarea.Equals("lights_out"))
+	{
+		//TurnLightsOut();
+	}
+	else if (_Tarea.Equals("trice_up"))
+	{
+		//HeaveOutTriceUp();
+	}
+	else if (_Tarea.Equals("liberty_call"))
+	{
+		//LibertyCall();
+	}
+	else if (_Tarea.Equals("muster"))
+	{
+		//CrewMuster();
+	}
+	else if (_Tarea.Equals("duty"))
+	{
+		Deber();
+	}
+	else
+	{
+		//In case the passed Task doesn't exist
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Red, TEXT("Tarea no definida"));
+	}
+
+}
+
+void AEnemigo::Tarea(const TArray<FString>& _Tareas)
+{
+	for (const FString & TareaActual : _Tareas)
+	{
+		Tarea(TareaActual);
+	}
+
 }
 

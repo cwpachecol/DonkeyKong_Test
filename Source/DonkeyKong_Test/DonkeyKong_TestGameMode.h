@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "DonkeyKongControlador.h"
 #include "DonkeyKong_TestGameMode.generated.h"
 
 class AObstaculoMuro;
@@ -15,6 +16,7 @@ class AInventario;
 class ABuilderPisosBasicos;
 class ABuilderPisosIntermedios;
 class ADirectorPisos;
+class AArmaduraJugador;
 
 UCLASS(minimalapi)
 class ADonkeyKong_TestGameMode : public AGameModeBase
@@ -48,8 +50,9 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "Pisos")
 	ADirectorPisos* DirectorPisos;
 
-
-
+public:
+	FTimerHandle UtilizarArmaduraTimerHandle;
+	void UtilizarArmadura();
 
 	FTimerHandle SpawnBarrilTimerHandle;
 	void SpawnBarril();
@@ -62,6 +65,12 @@ private:
 
 	UPROPERTY()
 	AInventario* inventario;
+
+	AArmaduraJugador* ArmaduraJugador;
+
+private: 
+	UPROPERTY() 
+	ADonkeyKongControlador* DonkeyKongControlador;
 };
 
 

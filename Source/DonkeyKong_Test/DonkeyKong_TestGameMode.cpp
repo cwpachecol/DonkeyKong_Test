@@ -31,6 +31,10 @@
 #include "Piso.h"
 #include "EstrategiaMovientoAleatorio.h"
 
+#include "ArmaduraJugador.h"
+#include "DonkeyKongControlador.h"
+#include "EngineUtils.h"
+
 ADonkeyKong_TestGameMode::ADonkeyKong_TestGameMode()
 {
 	// set default pawn class to our Blueprinted character
@@ -46,7 +50,21 @@ void ADonkeyKong_TestGameMode::BeginPlay()
 {
     Super::BeginPlay();
 
+	for (TActorIterator<ADonkeyKongControlador> It(GetWorld()); It; ++It) 
+	{ 
+		DonkeyKongControlador = *It; 
+		break; 
+	} 
 	
+	if (DonkeyKongControlador) 
+	{ 
+		// Iniciar el juego utilizando el controlador 
+		//DonkeyKongControlador->
+	}
+
+
+	ArmaduraJugador = GetWorld()->SpawnActor<AArmaduraJugador>(AArmaduraJugador::StaticClass());
+
 	//ACharacter* MyCharacter = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
 	//if (MyCharacter)
 	//{
@@ -103,7 +121,7 @@ void ADonkeyKong_TestGameMode::BeginPlay()
 	
 	//GetWorld()->GetTimerManager().SetTimer(SpawnBarrilTimerHandle, this, &ADonkeyKong_TestGameMode::SpawnBarril, 3.0f, true);
 	//GetWorld()->GetTimerManager().SetTimer(SpawnMuroTimerHandle, this, &ADonkeyKong_TestGameMode::SpawnMuro, 3.0f, true);
-
+	GetWorld()->GetTimerManager().SetTimer(UtilizarArmaduraTimerHandle, this, &ADonkeyKong_TestGameMode::UtilizarArmadura, 5.0f, true);
 
 	//Create 4 Inventory
 	/*for (int i = 0; i <= 4; i++)
@@ -135,37 +153,26 @@ void ADonkeyKong_TestGameMode::BeginPlay()
 	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Potion is %s"), *posion->getNombrePosion()));
 	//
 
-	AFabricaEnemigos* fabricaEnemigos;
-	//fabricaEnemigos = NewObject<AFabricaEnemigosFantasia>();
-	fabricaEnemigos = NewObject<AFabricaEnemigosAnimales>();
-	//fabricaEnemigos = NewObject<AFabricaEnemigosMisticos>();
+	
 
-	AEnemigo* enemigoTerrestre01 = fabricaEnemigos->FabricarEnemigoTerrestre();
-	AEstrategiaMovientoAleatorio* estrategiaMovimientoAleatorio = GetWorld()->SpawnActor<AEstrategiaMovientoAleatorio>(AEstrategiaMovientoAleatorio::StaticClass());
-		
-	/*enemigoTerrestre01->SetEstrategiaMovimiento(estrategiaMovimientoAleatorio);
-	enemigoTerrestre01->SetEnMovimiento(true);*/
-	FTransform SpawnLocationEnemigo;
-	SpawnLocationEnemigo.SetLocation(FVector(1860.0f, 0.0f + float(FMath::RandRange(-500, 500)), 360.0f));
-	SpawnLocationEnemigo.SetRotation(FQuat(FRotator(0.0f, 0.0f, 0.0f)));
+}
 
-	AEnemigo* enemigoSpawned = GetWorld()->SpawnActor<AEnemigo>(enemigoTerrestre01->GetClass(), SpawnLocationEnemigo);
-	enemigoSpawned->SetEstrategiaMovimiento(estrategiaMovimientoAleatorio);
-	enemigoSpawned->SetEnMovimiento(true);
+void ADonkeyKong_TestGameMode::UtilizarArmadura()
+{
+	ACharacter* PlayerCharacter = UGameplayStatics::GetPlayerCharacter(this, 0);
 
-	//fabricaEnemigos = NewObject<AFabricaEnemigosFantasia>();
-	//AEnemigo* enemigoTerrestre02 = fabricaEnemigos->FabricarEnemigoTerrestre();
+	if (!PlayerCharacter)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Red, TEXT("No se detecto al character del jugador"));
 
-	//SpawnLocationEnemigo.SetLocation(FVector(1860.0f, 0.0f + float(FMath::RandRange(-500, 500)), 360.0f));
-	//GetWorld()->SpawnActor<AEnemigo>(enemigoTerrestre02->GetClass(), SpawnLocationEnemigo);
-
-	//fabricaEnemigos = NewObject<AFabricaEnemigosMisticos>();
-	//AEnemigo* enemigoTerrestre03 = fabricaEnemigos->FabricarEnemigoTerrestre();
-
-	//SpawnLocationEnemigo.SetLocation(FVector(1860.0f, 0.0f + float(FMath::RandRange(-500, 500)), 360.0f));
-	//GetWorld()->SpawnActor<AEnemigo>(enemigoTerrestre03->GetClass(), SpawnLocationEnemigo);
-
-
+	}
+	else {
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Blue, TEXT("Se detecto al character del jugador"));
+		//AArmaduraJugador* ArmaduraJugador = GetWorld()->SpawnActor<AArmaduraJugador>(AArmaduraJugador::StaticClass());
+		ArmaduraJugador->SetJugadorMario(PlayerCharacter);
+		ArmaduraJugador->UsarArmadura();
+	}
+	
 }
 
 void ADonkeyKong_TestGameMode::SpawnBarril()
@@ -227,3 +234,4 @@ void ADonkeyKong_TestGameMode::SpawnMuro()
 	//GetWorld()->GetTimerManager().ClearTimer(SpawnMuroTimerHandle);
 	
 }
+

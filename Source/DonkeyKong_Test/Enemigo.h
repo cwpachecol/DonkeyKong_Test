@@ -7,6 +7,9 @@
 #include "Enemigo.generated.h"
 
 class IEstrategiaMovimiento;
+class IStadoEnemigo;
+class ADescansando;
+class AEstadoEnemgioEnojado;
 
 UCLASS()
 class DONKEYKONG_TEST_API AEnemigo : public ACharacter
@@ -23,6 +26,9 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	IStadoEnemigo* estadoEnemigo;
+	ADescansando* EstadoEnemigoDescansando;
+	AEstadoEnemgioEnojado* EstadoEnemigoEnojado;
 
 	FString Nombre;
 	/*UPROPERTY(EditAnywhere, Category = "Mesh")
@@ -47,13 +53,15 @@ public:
 	void SetEstrategiaMovimiento(AActor* _EstrategiaMovimiento);
 
 	void Mover();
+	void Moverse();
+	void Atacar();
 
 private:
-	void Task(const FString& Task);
+	void Tarea(const FString& _Tarea);
 
 public:
 	//Execute the passed Tasks
-	void Task(const TArray<FString>& Tasks);
+	void Tarea(const TArray<FString>& _Tareas);
 	//Execute the member duty. It's pure virtual, so it doesn't need an implementation in this class
 	//virtual void Duty() PURE_VIRTUAL(AEnemigo::Duty, ;);
 	//Return the member Title. It's pure virtual, so it doesn't need an implementation in this class
@@ -83,4 +91,8 @@ public:
 	//void Disparar();
 	//void Recargar();
 	//void Recoger();
+
+	
+	virtual void Deber() PURE_VIRTUAL(AEnemigo::Deber, ;);
+	
 };

@@ -4,12 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "DecoradorJugadorCharacter.h"
 #include "DonkeyKong_TestCharacter.generated.h"
 
 class AObstaculo;
 
 UCLASS(config=Game)
-class ADonkeyKong_TestCharacter : public ACharacter
+class ADonkeyKong_TestCharacter : public ACharacter, public IJugadorMario
 {
 	GENERATED_BODY()
 
@@ -53,5 +54,10 @@ public:
 	/** Returns obstaculo01 subobject **/
 	FORCEINLINE AObstaculo* GetObstaculo() const { return obstaculo01; }
 	FORCEINLINE void SetObstaculo(AObstaculo* _obstaculo) { obstaculo01 = _obstaculo; }
+
+public:
+	void UsarArmadura() override;
+	void UsarPoder() override;
+	void UsarHabilidad() override;
 
 };

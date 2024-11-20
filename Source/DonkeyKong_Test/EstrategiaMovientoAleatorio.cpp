@@ -29,7 +29,7 @@ void AEstrategiaMovientoAleatorio::Moverse()
 {
 	/*FVector NuevaPosicion = FVector(FMath::RandRange(-500, 500), FMath::RandRange(-500, 500), FMath::RandRange(100, 500)); 
 	SetActorLocation(NuevaPosicion);*/
-	GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("Se aplico el movimiento aleatorio"));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT("Se aplico el movimiento aleatorio"));
 
 }
 
